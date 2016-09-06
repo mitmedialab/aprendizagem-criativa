@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/">
+
+    <title>Events | Aprendizagem Criativa</title>
+
+    <!-- hosted MDL -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.pink-indigo.min.css">
+    <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+
+    <!-- Custom styles -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin-ext" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title font-override mdl-typography--font-bold cursor-override">Aprendizagem Criativa</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link custom-nav" href="/index.html">Home</a>
+            <a class="mdl-navigation__link custom-nav" href="/about.html">About</a>
+            <a class="mdl-navigation__link custom-nav" href="http://forum.aprendizagemcriativa.org">Forum</a>
+            <a class="mdl-navigation__link custom-nav isactive" href="">Events</a>
+            <a class="mdl-navigation__link custom-nav" href="/map.html">Map</a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title font-override mdl-typography--font-bold cursor-override">Apredizagem Criativa</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="/index.html">Home</a>
+          <a class="mdl-navigation__link" href="/about.html">About</a>
+          <a class="mdl-navigation__link" href="http://forum.apredizagemcriativa.org">Forum</a>
+          <a class="mdl-navigation__link" href="">Events</a>
+          <a class="mdl-navigation__link" href="/map.html">Map</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="mdl-grid custom-grid-events" id="event-grid"></div> 
+      </main>
+    </div>    
+
+    <script src="https://code.jquery.com/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>
+    <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+    <script src="/js/libs/miso.ds.min.deps.js"></script>
+    <script src="/js/libs/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.4.4/randomColor.min.js"></script>
+    <script src="js/calendars.js"></script>
+    <script src="js/events-page.js"></script>
+
+    <!-- event card template --> 
+    <script id="event-template" type="x-tmpl-mustache">
+     <div class="mdl-cell mdl-cell--6-col">
+      <div class="custom-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title title-container-override" id="event-{{_id}}">
+          <h2 class="mdl-card__title-text titles-override font-override">{{ title }}</h2>
+          <h6 class="mdl-card__subtitle-text-custom font-override">hosted by {{ host }}</h6>
+        </div>
+        <div class="mdl-card__supporting-text custom-supporting-text">
+          {{ description }}
+          <br><br>
+          <span class="font-bold">WHERE:</span> {{ location }}<br>
+          <span class="font-bold">WHEN:</span> {{ date }} at {{ time }}
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect font-override" href="{{ link }}" target="_blank">
+            RSVP for this Event
+          </a>
+        </div>
+        <div class="mdl-card__menu">
+          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="cal-{{ _id }}">
+            <i class="material-icons">event</i>
+          </button>
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+              for="cal-{{ _id }}">
+            <a class="cal-menu-link" id="gcal-{{_id}}" href="" target="_blank"><li class="mdl-menu__item">Google Calendar</li></a>
+            <a class="cal-menu-link" id="ical-{{_id}}" href="" target="_blank"><li class="mdl-menu__item">iCalendar</li></a>
+            <a class="cal-menu-link" id="outlook-{{_id}}" href="" target="_blank"><li class="mdl-menu__item">Outlook</li></a>
+          </ul>
+        </div>
+      </div> 
+    </div> 
+    </script>
+
+  </body>
+</html>
