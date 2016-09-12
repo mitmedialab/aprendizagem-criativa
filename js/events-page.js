@@ -36,6 +36,7 @@ ds.fetch({
     });
     // upgrade DOM for mdl components
     componentHandler.upgradeDom();
+
   },
   error : function() {
     console.log("Are you sure you are connected to the internet?");
@@ -80,3 +81,4 @@ function addhttp(url) {
     }
     return url;
 };
+

@@ -91,6 +91,7 @@ body{
 
 .custom-card-wide.mdl-card {
   width: 100%;
+  overflow: visible;
 }
 
 .custom-card-wide > .mdl-card__title {
@@ -128,8 +129,6 @@ body{
   -webkit-transform-origin: 149px 48px;
           transform-origin: 149px 48px;
   margin: 5px 0px 0px 0px; }
-
-
 
 .custom-card-wide > .mdl-card__menu {
   color: #fff;

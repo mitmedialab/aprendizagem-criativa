@@ -76,14 +76,13 @@
     <script src="/lcl-brazil/js/libs/mustache.min.js"></script>
     <script src="/lcl-brazil/js/calendars.js"></script>
     <script src="/lcl-brazil/js/events-page.js"></script>
-
+  
     <!--
     <script src="/js/libs/miso.ds.min.deps.js"></script>
     <script src="/js/libs/mustache.min.js"></script>
     <script src="/js/calendars.js"></script>
     <script src="/js/events-page.js"></script>
   -->
-
     <!-- event card template --> 
     <script id="event-template" type="x-tmpl-mustache">
      <div class="mdl-cell mdl-cell--6-col custom-cell-flex">
@@ -107,7 +106,7 @@
           <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="cal-{{ _id }}">
             <i class="material-icons">event</i>
           </button>
-          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu"
               for="cal-{{ _id }}">
             <a class="cal-menu-link" id="gcal-{{_id}}" href="" target="_blank"><li class="mdl-menu__item">Google Calendar</li></a>
             <a class="cal-menu-link" id="ical-{{_id}}" href="" target="_blank"><li class="mdl-menu__item">iCalendar</li></a>
