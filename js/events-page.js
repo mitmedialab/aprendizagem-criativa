@@ -79,4 +79,4 @@ function addhttp(url) {
         url = "http://" + url;
     }
     return url;
-}
+};
