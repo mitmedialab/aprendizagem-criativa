@@ -1,7 +1,7 @@
 var ds = new Miso.Dataset({
   importer : Miso.Dataset.Importers.GoogleSpreadsheet,
   parser : Miso.Dataset.Parsers.GoogleSpreadsheet,
-  key : "1py_V7KKmzB2tZslSu4pD7x-1gKTsceR0Hv2ZgiAZL_A",
+  key : "1frLQzcNLahwziOdXjWAPuRdqKIklTjYbBm0iMFktaZU",
   worksheet : "1"
 });
 
@@ -9,20 +9,18 @@ ds.fetch({
   success : function() {
     // if successfully fetch data from gsheet
     var d = new Date(); // get current datetime
-    console.log(d);
     var approvedEvents = this.where({
       // copy over columns with event info
-      columns: ["title", "host", "date", "time", "location", "description", "link"],
+      columns: ["title", "host", "location","date","starttime","endtime","timezone", "description", "link"],
       // and only where an admin has approved
       rows: function(row) {
-        console.log(row.date+" "+row.time);
-        return row.approved == 1 && new Date(row.date+" "+row.time) > d;
+        return row.approved == 1 && new Date(row.date+" "+row.starttime+" "+row.timezone) > d;
       }
     });
     // sort most recent to top
     approvedEvents.sort(function(rowA, rowB) {
-      var rowAdate = new Date(rowA.date+" "+rowA.time);
-      var rowBdate = new Date(rowB.date+" "+rowB.time);
+      var rowAdate = new Date(rowA.date+" "+rowA.starttime+" "+rowA.timezone);
+      var rowBdate = new Date(rowB.date+" "+rowB.starttime+" "+rowB.timezone);
       if (rowAdate < rowBdate) {
         return -1;
       }
@@ -32,9 +30,10 @@ ds.fetch({
       return 0;
     });
     // loop over each row of data and call loadEvent
-      approvedEvents.each(function(row){
-         loadEvent(row);
-      });
+    approvedEvents.each(function(row){
+      row.link = addhttp(row.link);
+      loadEvent(row);
+    });
     // upgrade DOM for mdl components
     componentHandler.upgradeDom();
   },
@@ -62,9 +61,8 @@ function loadEvent(data) {
 // make event object for calendar links where data is a row of spreadsheet data
 function makeCalendarEventObject(data){
   var event_object = {
-                      'start': new Date(data.date+" "+data.time),
-                      'end': '',
-                      'duration': 60,
+                      'start': new Date(data.date+" "+data.starttime+" "+data.timezone),
+                      'end': new Date(data.date+" "+data.endtime+" "+data.timezone),
                       'title': data.title,
                       'description': 'Hosted By: '+data.host+'\nEvent Link: '+data.link+'\n\n'+data.description,
                       'icsdescription': data.description,
@@ -74,3 +72,11 @@ function makeCalendarEventObject(data){
                     };
   return event_object;
 };
+
+// format links so they work properly in HTML even if they were input with out a http:// in the form
+function addhttp(url) {
+    if (!/^(?:f|ht)tps?\:\/\//.test(url)) {
+        url = "http://" + url;
+    }
+    return url;
+}
