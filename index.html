@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,18 +8,19 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="images/">
+    <link rel="icon" href="img/">
 
     <title>Aprendizagem Criativa</title>
 
     <!-- hosted MDL -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.pink-cyan.min.css">
-    <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.green-amber.min.css">
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 
     <!-- Custom styles -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin-ext" rel="stylesheet">
     <link href="/lcl-brazil/css/style.css" rel="stylesheet">
+    <!--<link href="/css/style.css" rel="stylesheet">-->
 
   </head>
 
@@ -30,36 +31,42 @@
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
           <!-- Title -->
-          <span class="mdl-layout-title font-override mdl-typography--font-bold cursor-override">Aprendizagem Criativa</span>
+          <a class="custom-title-link" href="">
+            <span class="mdl-layout-title font-override mdl-typography--font-bold font-color-white">Aprendizagem Criativa</span></a>
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation. We hide it in small screens. -->
           <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link custom-nav isactive" href="">Home</a>
-            <a class="mdl-navigation__link custom-nav" href="/lcl-brazil/about.html">About</a>
-            <a class="mdl-navigation__link custom-nav" href="http://forum.aprendizagemcriativa.org">Forum</a>
-            <a class="mdl-navigation__link custom-nav" href="/lcl-brazil/events.html">Events</a>
-            <a class="mdl-navigation__link custom-nav" href="/lcl-brazil/map.html">Map</a>
-            <a class="mdl-navigation__link custom-nav" href="/lcl-brazil/projects.html">Projects</a>
+            <a class="mdl-navigation__link custom-nav" href="/lcl-brazil/sobre.html">Sobre</a>
+            <a class="mdl-navigation__link custom-nav" href="http://forum.aprendizagemcriativa.org">Fórum</a>
+            <a class="mdl-navigation__link custom-nav" href="/lcl-brazil/eventos.html">Eventos</a>
+            <a class="mdl-navigation__link custom-nav" href="/lcl-brazil/mapa.html">Mapa</a>
           </nav>
         </div>
       </header>
       <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title font-override mdl-typography--font-bold cursor-override">Apredizagem Criativa</span>
+       <span class="mdl-layout-title font-override mdl-typography--font-bold"><a class="custom-drawer-link" href="">Apredizagem Criativa</a></span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Home</a>
-          <a class="mdl-navigation__link" href="/lcl-brazil/about.html">About</a>
-          <a class="mdl-navigation__link" href="http://forum.apredizagemcriativa.org">Forum</a>
-          <a class="mdl-navigation__link" href="/lcl-brazil/events.html">Events</a>
-          <a class="mdl-navigation__link" href="/lcl-brazil/map.html">Map</a>
-          <a class="mdl-navigation__link" href="/lcl-brazil/projects.html">Projects</a>
+          <a class="mdl-navigation__link" href="/lcl-brazil/sobre.html">Sobre</a>
+          <a class="mdl-navigation__link" href="http://forum.apredizagemcriativa.org">Fórum</a>
+          <a class="mdl-navigation__link" href="/lcl-brazil/eventos.html">Eventos</a>
+          <a class="mdl-navigation__link" href="/lcl-brazil/mapa.html">Mapa</a>
         </nav>
       </div>
-      <main class="mdl-layout__content">
-        <div class="mdl-grid custom-homepage">
-          <div class="mdl-cell mdl-cell--6-col">
-            <h1 class="mdl-typography--text-center font-override">Homepage content</h1>
-          </div>
+      <main class="mdl-layout__content custom-homepage font-color-white">
+        <div class="fullpage-container">
+          <h1 class="mdl-typography--font-bold font-override font-color-white custom-homepage-title">Rede Brasileira de Aprendizagem Criativa</h1>
+          <p class="custom-homepage-text">Junte-se à uma comunidade de educadores, artistas, pais, designers e empreendedores explorando novas formas de criar, experimentar e aprender. Juntos, nós iremos reimaginar e reinventar a educação brasileira.</p>
+          <a href="http://forum.aprendizagemcriativa.org">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored font-override font-color-white">
+              Join Now
+            </button> 
+          </a>
+          <a href="/about.html">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored font-override font-color-white">
+              Learn More
+            </button> 
+          </a>
         </div>
       </main>
     </div>    

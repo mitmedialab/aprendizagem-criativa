@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +8,13 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="images/">
+    <link rel="icon" href="img/">
 
-    <title>Events | Aprendizagem Criativa</title>
+    <title>Eventos | Aprendizagem Criativa</title>
 
     <!-- hosted MDL -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.pink-indigo.min.css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.green-amber.min.css">
 
     <!-- Custom styles -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin-ext" rel="stylesheet">
@@ -30,37 +30,34 @@
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
           <!-- Title -->
-          <span class="mdl-layout-title font-override mdl-typography--font-bold cursor-override">Aprendizagem Criativa</span>
+          <a class="custom-title-link" href="/lcl-brazil/index.html">
+            <span class="mdl-layout-title font-override mdl-typography--font-bold font-color-white">Aprendizagem Criativa</span></a>
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation. We hide it in small screens. -->
           <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link custom-nav" href="/lcl-brazil/index.html">Home</a>
-            <a class="mdl-navigation__link custom-nav" href="/lcl-brazil/about.html">About</a>
-            <a class="mdl-navigation__link custom-nav" href="http://forum.aprendizagemcriativa.org">Forum</a>
-            <a class="mdl-navigation__link custom-nav isactive" href="">Events</a>
-            <a class="mdl-navigation__link custom-nav" href="/lcl-brazil/map.html">Map</a>
-            <a class="mdl-navigation__link custom-nav" href="/lcl-brazil/projects.html">Projects</a>
+            <a class="mdl-navigation__link custom-nav" href="/lcl-brazil/sobre.html">Sobre</a>
+            <a class="mdl-navigation__link custom-nav" href="http://forum.aprendizagemcriativa.org">Fórum</a>
+            <a class="mdl-navigation__link custom-nav isactive" href="">Eventos</a>
+            <a class="mdl-navigation__link custom-nav" href="/lcl-brazil/mapa.html">Mapa</a>
           </nav>
         </div>
       </header>
       <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title font-override mdl-typography--font-bold cursor-override">Apredizagem Criativa</span>
+       <span class="mdl-layout-title font-override mdl-typography--font-bold"><a class="custom-drawer-link" href="/lcl-brazil/index.html">Apredizagem Criativa</a></span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="/lcl-brazil/index.html">Home</a>
-          <a class="mdl-navigation__link" href="/lcl-brazil/about.html">About</a>
-          <a class="mdl-navigation__link" href="http://forum.apredizagemcriativa.org">Forum</a>
-          <a class="mdl-navigation__link" href="">Events</a>
-          <a class="mdl-navigation__link" href="/lcl-brazil/map.html">Map</a>
-          <a class="mdl-navigation__link" href="/lcl-brazil/projects.html">Projects</a>
+          <a class="mdl-navigation__link" href="/lcl-brazil/sobre.html">Sobre</a>
+          <a class="mdl-navigation__link" href="http://forum.apredizagemcriativa.org">Fórum</a>
+          <a class="mdl-navigation__link" href="">Eventos</a>
+          <a class="mdl-navigation__link" href="/lcl-brazil/mapa.html">Mapa</a>
         </nav>
       </div>
       <main class="mdl-layout__content">
         <div class="banner">
-          <h1 class="mdl-typography--text-center font-override margin-override">Community Events</h1>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeY6-nuBpmFnztOp3lVSUKA3bALvZ5iWj99QzRXVHukhrJAnQ/viewform" target="_blank">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored font-override">
-              Add an Event
+          <h1 class="mdl-typography--text-center font-override margin-override">Eventos Comunitários</h1>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeY6-nuBpmFnztOp3lVSUKA3bALvZ5iWj99QzRXVHukhrJAnQ/viewform?hl=pt" target="_blank">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored font-override font-color-white">
+              Insira um Evento
             </button> 
           </a>
         </div>
@@ -74,22 +71,19 @@
     
     <script src="/lcl-brazil/js/libs/miso.ds.min.deps.js"></script>
     <script src="/lcl-brazil/js/libs/mustache.min.js"></script>
-    <script src="/lcl-brazil/js/calendars.js"></script>
     <script src="/lcl-brazil/js/events-page.js"></script>
-  
     <!--
     <script src="/js/libs/miso.ds.min.deps.js"></script>
     <script src="/js/libs/mustache.min.js"></script>
-    <script src="/js/calendars.js"></script>
     <script src="/js/events-page.js"></script>
-  -->
+    -->
     <!-- event card template --> 
     <script id="event-template" type="x-tmpl-mustache">
      <div class="mdl-cell mdl-cell--6-col custom-cell-flex">
       <div class="custom-card-wide mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title title-container-override" id="event-{{_id}}">
           <h2 class="mdl-card__title-text titles-override font-override">{{ title }}</h2>
-          <h6 class="mdl-card__subtitle-text-custom font-override">hosted by {{ host }}</h6>
+          <h6 class="mdl-card__subtitle-text-custom font-override">organizado por {{ host }}</h6>
         </div>
         <div class="mdl-card__supporting-text custom-supporting-text">
           {{ description }}
@@ -99,19 +93,15 @@
         </div>
         <div class="mdl-card__actions mdl-card--border">
           <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect font-override" href="{{ link }}" target="_blank">
-            RSVP for this Event
+            Confirme a sua presença
           </a>
         </div>
         <div class="mdl-card__menu">
-          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="cal-{{ _id }}">
-            <i class="material-icons">event</i>
-          </button>
-          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu"
-              for="cal-{{ _id }}">
-            <a class="cal-menu-link" id="gcal-{{_id}}" href="" target="_blank"><li class="mdl-menu__item">Google Calendar</li></a>
-            <a class="cal-menu-link" id="ical-{{_id}}" href="" target="_blank"><li class="mdl-menu__item">iCalendar</li></a>
-            <a class="cal-menu-link" id="outlook-{{_id}}" href="" target="_blank"><li class="mdl-menu__item">Outlook</li></a>
-          </ul>
+          <a class="font-color-white" id="gcal-{{_id}}" href="" target="_blank">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="cal-{{ _id }}">
+              <i class="material-icons">event</i>
+            </button>
+          </a>
         </div>
       </div> 
     </div> 

@@ -36,7 +36,7 @@ ds.fetch({
     });
     // upgrade DOM for mdl components
     componentHandler.upgradeDom();
-
+    $('.mdl-layout__content').scroll(function(){ $(window).trigger('resize');});
   },
   error : function() {
     console.log("Are you sure you are connected to the internet?");
@@ -52,11 +52,9 @@ function loadEvent(data) {
   var cal_links = generateCalendars(calLinkData);
   $('#event-grid').append(rendered);
   // set each event to have a random background color
-  $('#event-'+data._id).css('background-color',randomColor({hue: 'blue',luminosity: 'bright'}));
-  // set hrefs for calendar links
+  $('#event-'+data._id).css('background-color',randomColor({luminosity: 'dark'}));
+  // set href for calendar links
   $('#gcal-'+data._id).attr("href",cal_links.google);
-  $('#ical-'+data._id).attr("href",cal_links.ical);
-  $('#outlook-'+data._id).attr("href",cal_links.outlook);
 };
 
 // make event object for calendar links where data is a row of spreadsheet data
@@ -65,8 +63,7 @@ function makeCalendarEventObject(data){
                       'start': new Date(data.date+" "+data.starttime+" "+data.timezone),
                       'end': new Date(data.date+" "+data.endtime+" "+data.timezone),
                       'title': data.title,
-                      'description': 'Hosted By: '+data.host+'\nEvent Link: '+data.link+'\n\n'+data.description,
-                      'icsdescription': data.description,
+                      'description': 'Organizado Por: '+data.host+'\nEvent Link: '+data.link+'\n\n'+data.description,
                       'address': data.location,
                       'link': data.link,
                       'host': data.host
@@ -82,3 +79,42 @@ function addhttp(url) {
     return url;
 };
 
+// below code modified from https://github.com/carlsednaoui/add-to-calendar-buttons
+// event object should be:
+/* event_object = {
+                  'start': new Date('August 30, 2016 19:00 PDT'),
+                  'end': new Date('August 30, 2016 20:00 PDT'),
+                  'title': 'Event Title',
+                  'description': 'Event Description is an event description for your event.',
+                  'address': 'This is the location of the event',
+                  'link': 'http://example.com',
+                  'host': 'Event host'
+                };*/
+var formatTime = function(date) {
+  return date.toISOString().replace(/-|:|\.\d+/g, '');
+};
+
+var calendarGenerators = {
+  google: function(event) {
+    var startTime = formatTime(event.start);
+    var endTime = formatTime(event.end);
+
+    var href = encodeURI([
+      'https://www.google.com/calendar/render',
+      '?action=TEMPLATE',
+      '&text=' + (event.title || ''),
+      '&dates=' + (startTime || ''),
+      '/' + (endTime || ''),
+      '&details=' + (event.description || ''),
+      '&location=' + (event.address || ''),
+      '&sprop=&sprop=name:'
+    ].join(''));
+    return href;
+  }
+};
+
+var generateCalendars = function(event) {
+  return {
+    google: calendarGenerators.google(event)
+  };
+};

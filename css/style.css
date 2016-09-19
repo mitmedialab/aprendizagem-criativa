@@ -14,10 +14,6 @@ body{
 	font-weight: 700;
 }
 
-.cursor-override{
-	cursor: default;
-}
-
 .full-height{
 	height: 100%;
 }
@@ -26,12 +22,35 @@ body{
   text-transform: none;
 }
 
+.font-color-white{
+  color: #FFF !important;
+}
+
 /* Navbar styles */
+
+.custom-title-link{
+  text-decoration: none;
+}
+
+.custom-title-link:hover{
+  opacity: 0.9;
+}
+
+.custom-drawer-link{
+  text-decoration: none;
+  color: rgb(66, 66, 66);
+  font-weight: 700;
+}
+
+.custom-drawer-link:hover{
+  opacity: 0.7;
+}
 
 .custom-nav{
 	opacity: 0.8;
 	box-sizing: border-box;
 	border-bottom: 3px solid transparent;
+  color: #FFF !important;
 }
 
 .custom-nav:hover{
@@ -40,10 +59,54 @@ body{
 
 .isactive{
 	opacity: 1;
-  border-bottom-color: rgb(83,109,254);
+  border-bottom-color: rgb(255, 193, 7);
 }
 
-/* Events styles*/
+.mdl-layout__header .mdl-layout__drawer-button{
+  color: #fff;
+}
+
+/* Homepage styles */
+
+.custom-homepage{
+  background-image: url("../img/homepage.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.fullpage-container{
+  text-align: center;
+  text-shadow: 1px 1px 5px #555;
+  margin: 0 15% 0 15%;
+}
+
+.custom-homepage-title{
+  margin-bottom: 10px;
+  line-height: 1.1;
+  font-size: 48px;
+}
+
+.custom-homepage-text{
+  font-size: 18px;
+  margin-bottom: 25px;
+  padding: 0 10% 0 10%;
+}
+
+/* Events styles */
 
 .banner{
   display: -webkit-box;
@@ -60,8 +123,8 @@ body{
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 250px;
-  background-color: rgb(233, 32, 99);
-  background-color: rgba(233, 32, 99, 0.2);
+  background-color: #E5FFE9;
+  background-color: rgba(76, 175, 80, 0.2);
 }
 
 .banner > .margin-override {
@@ -140,11 +203,6 @@ body{
   -moz-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-}
-
-.cal-menu-link{
-	color: #000;
-	text-decoration: none;
 }
 
 /* Map styles*/
