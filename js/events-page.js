@@ -63,7 +63,7 @@ function makeCalendarEventObject(data){
                       'start': new Date(data.date+" "+data.starttime+" "+data.timezone),
                       'end': new Date(data.date+" "+data.endtime+" "+data.timezone),
                       'title': data.title,
-                      'description': 'Organizado Por: '+data.host+'\nEvent Link: '+data.link+'\n\n'+data.description,
+                      'description': 'Organizado Por: '+data.host+'\nLink para o Evento: '+data.link+'\n\n'+data.description,
                       'address': data.location,
                       'link': data.link,
                       'host': data.host
