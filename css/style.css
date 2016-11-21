@@ -231,14 +231,3 @@ body{
       -ms-flex: 1;
           flex: 1;
 }
-
-#map-explainer{
-	max-height: 80px;
-	text-align: center;
-}
-
-#map-explainer > p{
-	font-size: 20px;
-	padding-top: 10px;
-}
-
