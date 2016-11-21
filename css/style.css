@@ -5,6 +5,10 @@ body{
   font-weight: 400;
 }
 
+p{
+  font-size: 16px;
+}
+
 .font-override{
 	font-family: Lato, Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -110,7 +114,7 @@ body{
   margin-bottom: 10px;
 }
 
-/* Events styles */
+/* Banner styles */
 
 .banner{
   display: -webkit-box;
@@ -126,7 +130,7 @@ body{
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 250px;
+  min-height: 200px;
   background-color: #E5FFE9;
   background-color: rgba(76, 175, 80, 0.2);
 }
@@ -138,6 +142,8 @@ body{
 .banner > a > .mdl-button{
   margin-top: 10px;
 }
+
+/* Events styles */
 
 .event-dialog-override{
   width: 60%;
