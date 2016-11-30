@@ -135,8 +135,7 @@ a{
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 200px;
-  background-color: #E5FFE9;
-  background-color: rgba(76, 175, 80, 0.2);
+  background-color: #d9ead3;
 }
 
 .banner > .margin-override {
