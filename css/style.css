@@ -148,15 +148,20 @@ a{
 
 /* Events styles */
 
-.event-dialog-override{
-  width: 60%;
-}
-
 .custom-grid-events{
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   max-width: 1200px;
+}
+
+/* Projects styles */
+
+.custom-grid-projects{
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 1000px;
 }
 
 .custom-cell-flex{
@@ -172,7 +177,11 @@ a{
 
 .custom-card-wide > .mdl-card__title {
   color: #fff;
-  height: 176px;
+  height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(76,175,80);
 }
 
 .title-container-override{
@@ -188,6 +197,7 @@ a{
 .titles-override{
   -ms-flex-item-align: start;
       align-self: flex-start;
+  background-color: rgb(76,175,80);
 }
 
 .mdl-card__subtitle-text-custom {
@@ -204,7 +214,9 @@ a{
   overflow: hidden;
   -webkit-transform-origin: 149px 48px;
           transform-origin: 149px 48px;
-  margin: 5px 0px 0px 0px; }
+  margin: 5px 0px 0px 0px; 
+  background-color: rgb(76,175,80);
+}
 
 .custom-card-wide > .mdl-card__menu {
   color: #fff;
